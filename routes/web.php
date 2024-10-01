@@ -1,11 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'index']);
 
-Route::get('/profile', function () {
-    return view('user.profile');
-});
+Route::get('/profile', [UserController::class, 'index']);
