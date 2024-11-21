@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index () {
+
+
+        $posts = Post::all();
 
         $users = [
             [
@@ -50,5 +54,9 @@ class DashboardController extends Controller
         ];
 
         return view('dashboard', ['users' => $users], ['comms' => $comms]);
+
+        return view("dashboard", [
+            // dokoncit
+        ]);
     }
 }
