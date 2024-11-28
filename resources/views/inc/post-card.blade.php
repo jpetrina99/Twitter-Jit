@@ -14,21 +14,24 @@
         </div>
         <div class="card-body">
             <p class="fs-6 fw-light text-muted">
-                {{$user['descript']}}
+                {{$post->content}}
             </p>
             <div class="d-flex justify-content-between">
                 <div>
                     <a href="#" class="fw-light nav-link fs-6"> <span class="fas fa-heart me-1">
-                        </span> {{$user['likes']}} </a>
+                        </span> {{$post->likes}} </a>
                 </div>
                 <div>
                     <span class="fs-6 fw-light text-muted"> <span class="fas fa-clock"> </span>
-                        {{$user['date']}} </span>
+                        {{$post->created_at}} </span>
                 </div>
             </div>
+            {{---
+
             @foreach ($comms as $comm)
                 @include("inc.post-card-comments")
             @endforeach
+            ---}}
 
         </div>
     </div>

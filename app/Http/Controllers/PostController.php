@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function store(){
+    public function store()
+    {
         $request = request()->all();
         dump($request);
 

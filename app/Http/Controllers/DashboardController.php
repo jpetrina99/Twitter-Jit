@@ -53,10 +53,12 @@ class DashboardController extends Controller
             ]
         ];
 
-        return view('dashboard', ['users' => $users], ['comms' => $comms]);
+        //return view('dashboard', ['users' => $users], ['comms' => $comms]);
 
         return view("dashboard", [
-            // dokoncit
+            // dokoncit - done
+            'users' => $users,
+            'posts' => $posts,
         ]);
     }
 }
