@@ -9,15 +9,31 @@ class PostController extends Controller
 {
     public function store()
     {
-        $request = request()->all();
-        dump($request);
+        // $request = request()->all();
+
+        $validated = request()->validate([
+            "content" => "required|min:1|max:5",
+        ]);
+
+        // dump($request);
 
         Post::create([
             // content, likes
-            "content" => $request["content"],
+            "content" => $validated["content"],
             "likes" => 0,
         ]);
 
-        return redirect()->route("dashboard.index");
+        return redirect()->route("dashboard.index")->with("success", "Post was successfuly created!");
     }
+
+    public function destroy($id)
+    {
+
+        $post = Post::where("id", $id)->first();
+
+        $post->delete();
+
+        return redirect()->route("dashboard.index")->with("success", "Post was successfuly deleted!");
+    }
+
 }
