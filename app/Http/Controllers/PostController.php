@@ -12,7 +12,7 @@ class PostController extends Controller
         // $request = request()->all();
 
         $validated = request()->validate([
-            "content" => "required|min:1|max:5",
+            "content" => "required|min:1|max:255",
         ]);
 
         // dump($request);
