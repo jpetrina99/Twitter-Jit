@@ -26,10 +26,10 @@ class PostController extends Controller
         return redirect()->route("dashboard.index")->with("success", "Post was successfuly created!");
     }
 
-    public function destroy($id)
+    public function destroy(Post $post)
     {
 
-        $post = Post::where("id", $id)->first();
+        //$post = Post::where("id", $id)->first();
 
         $post->delete();
 
